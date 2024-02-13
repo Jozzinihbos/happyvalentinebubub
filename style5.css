@@ -1,0 +1,207 @@
+/* Mengimpor font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&display=swap');
+
+/* Menggunakan font Great Vibes untuk elemen dengan kelas "great-vibes" */
+.great-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Menggunakan font Parisienne untuk elemen dengan kelas "parisienne" */
+.parisienne {
+  font-family: 'Parisienne', cursive;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9eaea;
+    margin: auto;
+    padding: auto;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #ff4d4d;
+  }
+  
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .heart-photo {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff6666;
+  }
+  
+  #greetingText {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  @keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart-beat {
+  animation: heartbeat 0.5s ease-in-out;
+}
+@keyframes scrollRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.scroll-right-animation {
+  animation: scrollRight 2s ease-in-out;
+}
+button a {
+  text-decoration: none;
+  color: #f9eaea;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.great-vibes {
+  animation: blink 1s infinite;
+}
+/* Membuat animasi love berterbangan */
+@keyframes loveFlying {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Mengatur tata letak dan gaya untuk elemen body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9eaea;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Menghilangkan scrollbar */
+  position: relative; /* Mengatur posisi relatif untuk latar belakang yang absolute */
+}
+
+/* Menambahkan animasi love berterbangan */
+body::before {
+  content: '❤️'; /* Isi dari partikel love */
+  font-size: 20px; /* Ukuran partikel love */
+  position: absolute;
+  animation: loveFlying 10s linear infinite; /* Menggunakan animasi loveFlying */
+  opacity: 0; /* Opacity awal */
+}
+
+/* Mengatur variasi properti untuk setiap partikel love */
+body::before:nth-child(2) {
+  left: 10%;
+  animation-duration: 8s; /* Durasi animasi yang berbeda */
+  font-size: 25px; /* Ukuran partikel love yang berbeda */
+}
+
+body::before:nth-child(3) {
+  left: 80%;
+  animation-duration: 12s; /* Durasi animasi yang berbeda */
+  font-size: 30px; /* Ukuran partikel love yang berbeda */
+}
+
+/* Menambahkan lebih banyak partikel love */
+body::before:nth-child(4) {
+  content: '❤️';
+  font-size: 18px;
+  left: 30%;
+  animation-duration: 15s;
+}
+
+body::before:nth-child(5) {
+  content: '❤️';
+  font-size: 22px;
+  left: 60%;
+  animation-duration: 9s;
+}
+
+/* Membuat animasi melayang */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Mengatur animasi melayang pada foto-foto hati */
+.heart-photo {
+  animation: floating 3s ease-in-out infinite; /* Menerapkan animasi melayang */
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* Menyusun dalam 3 kolom */
+  grid-template-rows: repeat(2, 100px); /* Menyusun dalam 2 baris */
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+}
+
+.heart-photo:nth-child(1) {
+  grid-column: 2 / span 1; /* Menempatkan foto pertama di kolom kedua */
+  grid-row: 1 / span 1; /* Menempatkan foto pertama di baris pertama */
+}
+
+.heart-photo:nth-child(2) {
+  grid-column: 1 / span 1; /* Menempatkan foto kedua di kolom pertama */
+  grid-row: 2 / span 1; /* Menempatkan foto kedua di baris kedua */
+}
+
+.heart-photo:nth-child(3) {
+  grid-column: 3 / span 1; /* Menempatkan foto ketiga di kolom ketiga */
+  grid-row: 2 / span 1; /* Menempatkan foto ketiga di baris kedua */
+}
+
